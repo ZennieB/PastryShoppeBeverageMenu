@@ -1,1 +1,191 @@
-﻿
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #d3c09a;
+    background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 15%;
+}
+
+hr {
+    border-top: solid 1px #7d7d7d;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+
+.headingFont {
+    font-family: 'Fredericka the Great', cursive;
+    color: #26271a;
+}
+
+
+.beverage-img {
+    margin: 20px 20px 40px 20px;
+}
+
+.card {
+    background-color: #f3e6e3;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    margin: 20px;
+    max-width: 350px;
+    min-height: 350px;
+    max-height: 650px;
+    border-radius: 5px;
+    border: 4px double rgba(38, 39, 26, .25);
+}
+
+
+.links {
+    color: #776d8a;
+}
+
+.rightSideContainer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.dl-horizontal.dt {
+}
+
+.custom-button {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #F3E6E3;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 5px 20px;
+    background-color: #7d7d7d;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    margin-right: 0;
+}
+
+    .custom-button:hover {
+        background: #26271a;
+        color: #F3E6E3;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.footer-link {
+    text-decoration: underline;
+    font-weight: 800;
+    color: #776d8a;
+    margin: 10px;
+}
+
+
+div[class*=box] {
+    height: 33.33%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+.btn-one {
+    color: #776d8a;
+    transition: all 0.3s;
+    position: relative;
+}
+
+    .btn-one span {
+        transition: all 0.3s;
+    }
+
+    .btn-one::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: #776d8a;
+        border-bottom-color: #776d8a;
+        transform: scale(0.1, 1);
+    }
+
+    .btn-one:hover span {
+        letter-spacing: 2px;
+    }
+
+    .btn-one:hover::before {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .btn-one::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.3s;
+        background-color: rgba(119, 109, 138,0.1);
+    }
+
+    .btn-one:hover::after {
+        opacity: 0;
+        transform: scale(0.1, 1);
+    }

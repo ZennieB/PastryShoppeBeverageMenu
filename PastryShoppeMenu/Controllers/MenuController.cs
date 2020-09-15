@@ -1,5 +1,6 @@
 ﻿using DataLibrary.BusinessLogic;
 using PastryShoppeMenu.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -12,9 +13,18 @@ namespace PastryShoppeMenu.Controllers
 
         private List<Beverage> GetAllBeverages()
         {
-            return BeverageProcessor.LoadBeverages()
-                .Select(x => new Beverage(x.DrinkId, x.Name, x.Cost, x.Size, x.Description, x.CreatedBy, x.SpecialDrink))
-                .ToList();
+            try
+            {
+                return BeverageProcessor.LoadBeverages()
+                    .Select(x => new Beverage(x.DrinkId, x.Name, x.Cost, x.Size, x.Description, x.CreatedBy, x.SpecialDrink))
+                    .ToList();
+
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e);
+                return new List<Beverage>();
+            }
         }
 
         public MenuController()
