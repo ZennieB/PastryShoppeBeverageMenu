@@ -1,0 +1,67 @@
+﻿@model PastryShoppeMenu.Models.Beverage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Beverage</h4>
+    <hr />
+    <dl class="dl-horizontal col-md-12">
+        <dt class="control-label col-md-5">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd class="control-label col-md-7">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class="control-label col-md-5">
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd class="control-label col-md-7">
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt class="control-label col-md-5">
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd class="control-label col-md-7">
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt class="control-label col-md-5">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd class="control-label col-md-7">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt class="control-label col-md-5">
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd class="control-label col-md-7">
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt class="control-label col-md-5">
+            @Html.DisplayNameFor(model => model.SpecialDrink)
+        </dt>
+
+        <dd class="control-label col-md-7">
+            @Html.DisplayFor(model => model.SpecialDrink)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <div class="box-1">
+        <span>@Html.ActionLink("Back to Menu", "ViewMenu", null, new { @class = "btn btn-one headingFont" })</span>
+    </div>
+</p>

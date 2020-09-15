@@ -1,0 +1,48 @@
+﻿@model IEnumerable<PastryShoppeMenu.Models.Beverage>
+
+@{
+    ViewBag.Title = "ViewMenu";
+}
+
+<h1 class="headingFont">
+    The Pastry Shoppe's Menu
+</h1>
+
+<section class="flex-container">
+    <div class="cardContainer col-lg-12">
+        @foreach (var item in Model)
+        {
+            <div class="card col-lg-3 col-md-6 col-sm-12">
+
+                <img class="beverage-img" src="images/stirring.png" alt="beverage">
+                <hr class="links" />
+                <div class="info headingFont">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </div>
+                <div class="info">
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.Size)
+                </div>
+                <div style="word-wrap:break-word;">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.SpecialDrink)
+                </div>
+                <div>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BeverageId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BeverageId }, new { @class = "links" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BeverageId }, new { @class = "links" })
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<div class="box-1">
+    <span>@Html.ActionLink("Create New Drink", "CreateDrink", "Menu", null, new { @class = "btn btn-one headingFont" })</span>
+</div>

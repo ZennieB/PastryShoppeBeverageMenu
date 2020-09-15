@@ -1,0 +1,71 @@
+﻿@model PastryShoppeMenu.Models.Beverage
+
+@{
+    ViewBag.Title = "CreateDrink";
+}
+
+<h2>CreateDrink</h2>
+
+
+@using (Html.BeginForm("Create", "Menu")) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Beverage</h4>
+    <hr />
+    @Html.ValidationSummary(true, "Please fix the following errors.", new { @class = "text-danger col-md-12" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-5" })
+        @Html.TextBoxFor(model => model.Name, new { @maxlength = 30, @class = "form-control col-md-7" })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger col-md-12" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-5" })
+        @Html.TextBoxFor(model => model.Cost, new { @maxlength = 5, @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger col-md-12" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Size, htmlAttributes: new { @class = "control-label col-md-5" })
+        @Html.DropDownListFor(model => model.Size, new SelectList(Model.Sizes), "Select Size", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger col-md-12" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-5" })
+        @Html.TextBoxFor(model => model.Description, new { @maxlength = 140, @class = "form-control col-md-7" })
+        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger col-md-12" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-5" })
+        @Html.TextBoxFor(model => model.CreatedBy, new { @maxlength = 10, @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger col-md-12" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SpecialDrink, htmlAttributes: new { @class = "control-label col-md-5" })
+        <div class="col-md-7">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.SpecialDrink)
+                @Html.ValidationMessageFor(model => model.SpecialDrink, "", new { @class = "text-danger col-md-12" })
+            </div>
+        </div>
+    </div>
+
+    <div class="box-1">
+        <span>@Html.ActionLink("Back to Menu", "ViewMenu", null, new { @class = "btn btn-one headingFont" })</span>
+        <button type="submit" style="background-color:transparent;" class="btn btn-one headingFont">Create</button>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to Menu", "ViewMenu")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
