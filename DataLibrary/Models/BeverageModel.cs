@@ -8,7 +8,6 @@ namespace DataLibrary.Models
 {
     public class BeverageModel
     {
-        public int Id { get; set; }
         public int DrinkId { get; set; }
         public string Name { get; set; }
         public double Cost { get; set; }

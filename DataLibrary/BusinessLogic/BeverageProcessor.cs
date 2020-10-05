@@ -1,6 +1,9 @@
 ﻿using DataLibrary.DataAccess;
 using DataLibrary.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Security.Policy;
 
 namespace DataLibrary.BusinessLogic
 {
@@ -20,10 +23,8 @@ namespace DataLibrary.BusinessLogic
                 SpecialDrink = specialdrink
             };
 
-            int isSpecial = data.SpecialDrink ? 1 : 0;
-            string sql = @"insert into dbo.Beverages (DrinkId, Name, Cost, Size, Description, CreatedBy, SpecialDrink)
-                            values (@DrinkId, @Name, @Cost, @Size, @Description, @CreatedBy, " + $"{isSpecial}" + ");";
-            return SqlDataAccess.SaveData(sql, data);
+            return XmlDataAccess.SaveData(data);
+            
         }
 
         public static int UpdateBeverage(int beverageId, string name, double cost, string size, string description, string createdby, bool specialdrink)
@@ -39,27 +40,19 @@ namespace DataLibrary.BusinessLogic
                 SpecialDrink = specialdrink
             };
 
-            int isSpecial = data.SpecialDrink ? 1 : 0;
-            string sql = @"update dbo.Beverages 
-                           set Name = @Name, Cost = @Cost, Size = @Size, Description = @Description, CreatedBy = @CreatedBy, SpecialDrink = 1 
-                           where DrinkId = @DrinkId;";
+            return XmlDataAccess.UpdateData(data);
 
-            return SqlDataAccess.SaveData(sql, data);
         }
 
         public static int DeleteBeverage(int drinkId)
         {
-            string sql = "DELETE FROM dbo.Beverages WHERE DrinkId = @drinkId";
-
-            return SqlDataAccess.SaveData(sql, new { drinkId = drinkId});
+            return XmlDataAccess.DeleteData(drinkId);
 
         }
 
         public static List<BeverageModel> LoadBeverages()
         {
-            string sql = "select Id, DrinkId, Name, Cost, Size, Description, CreatedBy, SpecialDrink from dbo.Beverages;";
-
-            return SqlDataAccess.LoadData<BeverageModel>(sql);
+            return XmlDataAccess.GetData();
         }
     }
 }

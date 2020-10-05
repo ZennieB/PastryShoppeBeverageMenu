@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PastryShoppeMenu", "PastryS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{E03BCD64-90C0-466E-83B1-3EBD40C79576}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PastryShoppeDB", "PastryShoppeDB\PastryShoppeDB.sqlproj", "{4FED7E1C-4C87-47DD-9F7A-C6E8063EB95C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A99244F-4FA6-468C-8FCE-27E661198F8D}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -28,12 +26,6 @@ Global
 		{E03BCD64-90C0-466E-83B1-3EBD40C79576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E03BCD64-90C0-466E-83B1-3EBD40C79576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E03BCD64-90C0-466E-83B1-3EBD40C79576}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FED7E1C-4C87-47DD-9F7A-C6E8063EB95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FED7E1C-4C87-47DD-9F7A-C6E8063EB95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FED7E1C-4C87-47DD-9F7A-C6E8063EB95C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{4FED7E1C-4C87-47DD-9F7A-C6E8063EB95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FED7E1C-4C87-47DD-9F7A-C6E8063EB95C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FED7E1C-4C87-47DD-9F7A-C6E8063EB95C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

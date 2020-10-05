@@ -2,6 +2,7 @@
 using PastryShoppeMenu.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -10,6 +11,7 @@ namespace PastryShoppeMenu.Controllers
     public class MenuController : Controller
     {
         List<Beverage> AllBeverages { get; set; }
+        Random rnd = new Random();
 
         private List<Beverage> GetAllBeverages()
         {
@@ -59,7 +61,12 @@ namespace PastryShoppeMenu.Controllers
             {
                 return View("CreateDrink", value);
             }
-            int recordsCreated = BeverageProcessor.CreateBeverage(AllBeverages.Count, value.Name, value.Cost, value.Size, value.Description, value.CreatedBy, value.SpecialDrink);
+            do
+            {
+                value.BeverageId = rnd.Next(1, 3564815);
+            }
+            while (AllBeverages.Exists(x => x.BeverageId == value.BeverageId));
+            int recordsCreated = BeverageProcessor.CreateBeverage(value.BeverageId, value.Name, value.Cost, value.Size, value.Description, value.CreatedBy, value.SpecialDrink);
 
             return RedirectToAction("CreateDrink", "Menu");
         }

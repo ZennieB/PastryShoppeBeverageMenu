@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\BeverageProcessor.cs" />
     <Compile Include="DataAccess\SqlDataAccess.cs" />
+    <Compile Include="DataAccess\XmlDataAccess.cs" />
     <Compile Include="Models\BeverageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
